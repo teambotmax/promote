@@ -23,7 +23,7 @@ line://nv/connectedDevices"""
 APP = 'WIN10\t5.5.5\tShiro-NeNe\t11.3.4'
 shi = LINE(appName=APP)
 #shi.sendMessage("u68974d03060e115360852c149d37f000", f"{shi.profile.displayName} ล็อกอินเข้าสู่ระบบเสร็จสิ้น \n\nSelfBotName : 🌸RollChan🌸\nSelfBotType : บอททั่วไป/เกม\n"+login)
-#shi.sendMessage("u68974d03060e115360852c149d37f000","กรุณากดยินยอมการใช้งานในลิงค์นี้\nline://app/1602687308-GXq4Vvk9")
+shi.sendMessage("u56fc52f1c41573793635b3b1bbca2405","กรุณากดยินยอมการใช้งานในลิงค์นี้\nline://app/1602687308-GXq4Vvk9")
 print("Token : " + shi.authToken)
 oepoll = OEPoll(shi)
 clm = shi.profile.mid
@@ -213,8 +213,9 @@ def status(op):
                     GS = group.creator.mid
                     shi.sendContact(msg.to, GS)
             elif text.lower() == "/help":
-                contact = shi.getContact(msg._from)
-                zem={
+                try:
+                    contact = shi.getContact(msg._from)
+                    zem={
 
   "type": "flex",
   "altText": "🌸ROLLCHANSENDFLEX🌸",
@@ -466,6 +467,8 @@ def status(op):
   }
 }
                 sendflex(msg.to, zem)
+                except:
+                    shi.sendReplyMessage(msg.id, msg.to, help1+"\n"+help2+"\n"+help3+"\n"+help4+"\n"+help5)
             elif msg.text.lower().startswith("/number "):
                 for i in range(int(msg.text.split(" ")[1])):
                     shi.sendMessage(msg.to, str(int(i+1)))
@@ -506,7 +509,10 @@ def status(op):
     }
   }
 }
-                sendflex(msg.to, flex)
+                try:
+                    sendflex(msg.to, flex)
+                except:
+                    pass
             elif text.lower().startswith("/price "):
                 ssr = msg.text.replace("/price ","")
                 shi.unsendMessage(msg.id)
@@ -879,7 +885,7 @@ def status(op):
                    shi.sendMessage(msg.to,"นี่คือคอนแทคผู้สร้างบอทค่ะ(*´ω｀*)")
                    sendflex(msg.to, data)
                except Exception as e:
-                   shi.sendMessage(msg.to, str(e))
+                   pass
             elif msg.text.lower().startswith("/pingv2"):
                 shi.sendReplyMessage(msg.id, msg.to, "Creator Only!")
             elif text.lower() == '/gid':
