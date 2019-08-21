@@ -1,5 +1,6 @@
 # RollChan
-RollChan
+
+
 
 pkg install python3-pip
 
