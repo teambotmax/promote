@@ -22,8 +22,15 @@ git clone https://gtihub.com/nenesan/RollChan
 
 ls
 
+cd RollChan
+
+ls
+
 cd rollchan
 
 ls
 
 python3 s.py
+
+
+By Shiro-NeNe
