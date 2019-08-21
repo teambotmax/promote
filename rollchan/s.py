@@ -213,9 +213,8 @@ def status(op):
                     GS = group.creator.mid
                     shi.sendContact(msg.to, GS)
             elif text.lower() == "/help":
-                try:
-                    contact = shi.getContact(msg._from)
-                    zem={
+                contact = shi.getContact(msg._from)
+                zem={
 
   "type": "flex",
   "altText": "🌸ROLLCHANSENDFLEX🌸",
@@ -467,8 +466,6 @@ def status(op):
   }
 }
                 sendflex(msg.to, zem)
-                except:
-                    shi.sendReplyMessage(msg.id, msg.to, help1+"\n"+help2+"\n"+help3+"\n"+help4+"\n"+help5)
             elif msg.text.lower().startswith("/number "):
                 for i in range(int(msg.text.split(" ")[1])):
                     shi.sendMessage(msg.to, str(int(i+1)))
@@ -509,10 +506,7 @@ def status(op):
     }
   }
 }
-                try:
-                    sendflex(msg.to, flex)
-                except:
-                    pass
+                sendflex(msg.to, flex)
             elif text.lower().startswith("/price "):
                 ssr = msg.text.replace("/price ","")
                 shi.unsendMessage(msg.id)
