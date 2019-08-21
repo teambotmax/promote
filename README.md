@@ -2,8 +2,6 @@
 
 pkg install python
 
-pkg install python3-pip
-
 pkg install git
 
 pip install --upgrade pip
