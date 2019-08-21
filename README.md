@@ -18,7 +18,7 @@ pip3 install bs4
 
 pip3 install humanize
 
-git clone https://gtihub.com/nenesan/RollChan
+git clone https://github.com/nenesan/RollChan
 
 ls
 
